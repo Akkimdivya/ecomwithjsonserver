@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Create an Axios instance with default settings
 const api = axios.create({
-  baseURL: "http://localhost:5000", // Base URL for JSON Server
+  baseURL: "https://ecomdb.onrender.com/", // Base URL for JSON Server
   headers: {
     "Content-Type": "application/json", // Default content type
   },

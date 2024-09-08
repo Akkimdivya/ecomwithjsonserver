@@ -12,7 +12,7 @@ const AdminProducts = () => {
 
   // Fetch products from the backend
   const fetchProducts = () => {
-    axios.get("http://localhost:5000/products").then((response) => setProducts(response.data));
+    axios.get("https://ecomdb.onrender.com/products").then((response) => setProducts(response.data));
   };
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const AdminProducts = () => {
 
   // Handle product deletion
   const handleDeleteProduct = (id) => {
-    axios.delete(`http://localhost:5000/products/${id}`).then(() => {
+    axios.delete(`https://ecomdb.onrender.com/products/${id}`).then(() => {
       fetchProducts(); // Refetch products after deletion
     });
   };
@@ -45,7 +45,7 @@ const AdminProducts = () => {
 
   // Submit the updated product details
   const handleSaveChanges = () => {
-    axios.put(`http://localhost:5000/products/${currentProduct.id}`, currentProduct).then(() => {
+    axios.put(`https://ecomdb.onrender.com/products/${currentProduct.id}`, currentProduct).then(() => {
       fetchProducts(); // Refetch products after editing
       setOpenEditDialog(false);
       setCurrentProduct(null);
@@ -65,7 +65,7 @@ const AdminProducts = () => {
 
   // Add new product
   const handleAddNewProduct = () => {
-    axios.post("http://localhost:5000/products", newProduct).then(() => {
+    axios.post("https://ecomdb.onrender.com/products", newProduct).then(() => {
       fetchProducts(); // Refetch products after adding a new product
       setOpenAddDialog(false);
       setNewProduct({ name: "", description: "", price: "", rating: 0 });

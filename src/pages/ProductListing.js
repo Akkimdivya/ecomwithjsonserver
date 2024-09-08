@@ -9,7 +9,7 @@ const ProductListing = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/products").then((response) => setProducts(response.data));
+    axios.get("https://ecomdb.onrender.com/products").then((response) => setProducts(response.data));
   }, []);
 
   const filteredProducts = products.filter((product) =>
