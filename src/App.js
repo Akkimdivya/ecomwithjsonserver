@@ -41,7 +41,7 @@ function App() {
             <Route path="/profile" element={<PrivateRoute />}>
               <Route index element={<Profile />} />
             </Route>
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<ProductListing />} />
           </Routes>
         
       </AuthProvider>
