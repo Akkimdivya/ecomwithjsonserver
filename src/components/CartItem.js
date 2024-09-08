@@ -15,7 +15,6 @@ const CartItem = ({ item }) => {
     <Box sx={{ p: 2, border: "1px solid #ccc", mb: 2, borderRadius: "4px" }}>
       <Typography variant="h6">{item.name}</Typography>
       <Typography>Price: ${item.price}</Typography>
-      <Typography>Quantity: {item.quantity}</Typography>
       <Button variant="outlined" color="secondary" onClick={handleRemoveItem}>
         Remove
       </Button>
