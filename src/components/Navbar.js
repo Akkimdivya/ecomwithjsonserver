@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext); // Correct use of useContext inside a functional component
+  const { user, logout } = useContext(AuthContext); // Correctly use useContext inside a functional component
   const navigate = useNavigate();
 
   const handleLogout = () => {
