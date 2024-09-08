@@ -15,10 +15,16 @@ const cartSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
-      state.totalAmount += action.payload.price;
+      state.totalAmount += action.payload.price * action.payload.quantity;
     },
     removeFromCart(state, action) {
-      state.items = state.items.filter((item) => item.id !== action.payload.id);
+      const itemToRemove = state.items.find((item) => item.id === action.payload.id);
+      if (itemToRemove) {
+        // Update totalAmount by subtracting the removed item's total price
+        state.totalAmount -= itemToRemove.price * itemToRemove.quantity;
+        // Remove the item from the cart
+        state.items = state.items.filter((item) => item.id !== action.payload.id);
+      }
     },
     clearCart(state) {
       state.items = [];
