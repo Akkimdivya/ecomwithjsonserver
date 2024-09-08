@@ -25,7 +25,7 @@ const ProductDetails = () => {
     // Fetch product details when the component is mounted
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/products/${id}`); // Fetch product by ID
+        const response = await axios.get(`https://ecomdb.onrender.com/products/${id}`); // Fetch product by ID
         setProduct(response.data); // Set the fetched product data
         setLoading(false); // Set loading to false
       } catch (error) {

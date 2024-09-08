@@ -8,7 +8,6 @@ import Register from "./pages/Register";
 import ProductListing from "./pages/ProductListing";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
 import AdminProducts from "./pages/AdminProducts";
 import Wishlist from "./pages/Wishlist";
 import Profile from "./pages/Profile";
@@ -30,8 +29,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/products" element={<ProductListing />} />
             <Route path="/products/:id" element={<ProductDetails />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/cart" element={<PrivateRoute />}>
+              <Route index element={<Cart />} />
+            </Route>
             <Route path="/admin/products" element={<PrivateRoute />}>
               <Route index element={<AdminProducts />} />
             </Route>
